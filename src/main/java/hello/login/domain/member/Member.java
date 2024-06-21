@@ -2,11 +2,12 @@ package hello.login.domain.member;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 
 @Data
-@Builder
+@NoArgsConstructor
 public class Member {
 
   private Long id;
@@ -17,13 +18,20 @@ public class Member {
    *    허용 o: " "
    */
 
-  @NotEmpty
+  @NotEmpty(message = "빈 값은 허용되지 않습니다.")
   private String loginId;
 
-  @NotEmpty
+  @NotEmpty(message = "빈 값은 허용되지 않습니다.")
   private String name;
 
-  @NotEmpty
+  @NotEmpty(message = "빈 값은 허용되지 않습니다.")
   private String password;
+
+  @Builder
+  public Member(String loginId, String name, String password) {
+    this.loginId = loginId;
+    this.name = name;
+    this.password = password;
+  }
 
 }

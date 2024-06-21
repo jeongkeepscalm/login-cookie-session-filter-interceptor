@@ -29,10 +29,10 @@ public class TestDataInit {
     // 회원 데이터
     Member member = Member.builder()
             .loginId("test")
-            .password("test1")
+            .password("test123")
             .name("tester")
             .build();
-
+    memberRepository.save(member);
 
   }
 
