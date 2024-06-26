@@ -3,6 +3,7 @@ package hello.login.web;
 import hello.login.domain.login.web.SessionConst;
 import hello.login.domain.member.Member;
 import hello.login.domain.member.MemberRepository;
+import hello.login.web.argumentresolver.Login;
 import hello.login.web.session.SessionManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,21 +26,17 @@ public class HomeController {
   // 로그인이 이미 된 사용자는 재로그인할 필요 없으므로 LoginHome.html 으로 보낸다.
   // @GetMapping("/")
   public String homeLogin(@CookieValue(name = "memberId", required = false) Long memberId, Model model) {
-
     // 쿠키가 없다면 로그인 해야되는 페이지로 보낸다.
     if (memberId == null) {
       return "home";
     }
-
     // 멤버가 아니라면 로그인 해야되는 페이지로 보낸다.
     Member loginMember = memberRepository.findById(memberId);
     if (loginMember == null) {
       return "home";
     }
-
     model.addAttribute("member", loginMember);
     return "loginHome";
-
   }
 
   // "/" url 접근시 세션 체크
@@ -56,38 +53,45 @@ public class HomeController {
 
   // @GetMapping("/")
   public String homeLoginV3(HttpServletRequest request, Model model) {
-
     // 세션이 없을 경우
     HttpSession session = request.getSession(false);
     if (session == null) {
       return "home";
     }
-
     // 세션에 회원 정보가 없을 경우
     Member loginMember = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
     if (loginMember == null) {
       return "home";
     }
-
     // 세션이 유지되면 로그인으로 이동
     model.addAttribute("member", loginMember);
     return "loginHome";
 
   }
 
-  @GetMapping("/")
+//  @GetMapping("/")
   public String homeLoginV4(@SessionAttribute(name = SessionConst.LOGIN_MEMBER, required = false) Member loginMember
           , Model model) {
-
     // 세션에 회원 정보가 없을 경우
     if (loginMember == null) {
       return "home";
     }
-
     // 세션이 유지되면 로그인 이동
     model.addAttribute("member", loginMember);
     return "loginHome";
+  }
 
+  /**
+   * @Login 애노테이션이 있으면 직접 만든 ArgumentResolver 가 동작해서
+   * 자동으로 세션에 있는 로그인 회원을 찾아주고, 만약 세션에 없다면 null 을 반환하도록 개발
+   */
+  @GetMapping("/")
+  public String homeLoginV5(@Login Member loginMember, Model model) {
+    if (loginMember == null) {
+      return "home";
+    }
+    model.addAttribute("member", loginMember);
+    return "loginHome";
   }
 
 }
