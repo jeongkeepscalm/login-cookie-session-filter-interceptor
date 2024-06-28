@@ -1,6 +1,8 @@
 package hello.login.web.filter;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -24,12 +26,14 @@ public class LogFilter implements Filter {
     String uuid = UUID.randomUUID().toString();
 
     try {
-      log.info(":: request [{}] [{}]", uuid, requestURI);
+      MDC.put("request_uuid", UUID.randomUUID().toString().substring(0, 8));
+      log.info(":: request [{}]", requestURI);
       filterChain.doFilter(servletRequest, servletResponse);
     } catch (Exception e) {
       throw e;
     } finally {
-      log.info(":: response [{}] [{}]", uuid, requestURI);
+      log.info(":: response [{}]", requestURI);
+      MDC.clear();
     }
 
   }
