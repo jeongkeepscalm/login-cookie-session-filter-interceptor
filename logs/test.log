@@ -80,3 +80,33 @@ Error in object 'item': codes [totalPriceMin.item,totalPriceMin]; arguments [100
 [2024-06-27 22:11:15.930] INFO  7564 [http-nio-8080-exec-9] h.l.web.interceptor.LogInterceptor   ::   request [1dc5a542-86d5-418a-9b7d-3d96c61f0af9], [/items], [hello.login.web.item.ItemController#items(Model)]
 [2024-06-27 22:11:15.930] INFO  7564 [http-nio-8080-exec-9] h.l.web.interceptor.LogInterceptor   ::   postHandle modelAndView [ModelAndView [view="items/items"; model={items=[Item(id=1, itemName=itemA, price=10000, quantity=10), Item(id=2, itemName=itemB, price=20000, quantity=20), Item(id=3, itemName=상품명 수정, price=4000, quantity=100000)]}]]
 [2024-06-27 22:11:15.933] INFO  7564 [http-nio-8080-exec-9] h.l.web.interceptor.LogInterceptor   ::   response [1dc5a542-86d5-418a-9b7d-3d96c61f0af9], [/items]
+[2024-06-28 09:25:03.300] INFO  29304 [  background-preinit] o.h.validator.internal.util.Version  ::   HV000001: Hibernate Validator 6.1.7.Final
+[2024-06-28 09:25:03.314] INFO  29304 [                main] hello.login.ItemServiceApplication   ::   Starting ItemServiceApplication using Java 11.0.1 on DESKTOP-5IACMT8 with PID 29304 (C:\git_code\login_cookie_session_filter_interceptor\build\classes\java\main started by withy in C:\git_code\login_cookie_session_filter_interceptor)
+[2024-06-28 09:25:03.315] INFO  29304 [                main] hello.login.ItemServiceApplication   ::   No active profile set, falling back to default profiles: default
+[2024-06-28 09:25:04.513] INFO  29304 [                main] o.s.b.w.e.tomcat.TomcatWebServer     ::   Tomcat initialized with port(s): 8080 (http)
+[2024-06-28 09:25:04.531] INFO  29304 [                main] o.a.coyote.http11.Http11NioProtocol  ::   Initializing ProtocolHandler ["http-nio-8080"]
+[2024-06-28 09:25:04.531] INFO  29304 [                main] o.a.catalina.core.StandardService    ::   Starting service [Tomcat]
+[2024-06-28 09:25:04.532] INFO  29304 [                main] o.a.catalina.core.StandardEngine     ::   Starting Servlet engine: [Apache Tomcat/9.0.44]
+[2024-06-28 09:25:04.668] INFO  29304 [                main] o.a.c.c.C.[Tomcat].[localhost].[/]   ::   Initializing Spring embedded WebApplicationContext
+[2024-06-28 09:25:04.668] INFO  29304 [                main] o.s.b.w.s.c.ServletWebServerApplicationContext ::   Root WebApplicationContext: initialization completed in 1295 ms
+[2024-06-28 09:25:04.981] INFO  29304 [                main] o.s.s.c.ThreadPoolTaskExecutor       ::   Initializing ExecutorService 'applicationTaskExecutor'
+[2024-06-28 09:25:05.172] INFO  29304 [                main] o.a.coyote.http11.Http11NioProtocol  ::   Starting ProtocolHandler ["http-nio-8080"]
+[2024-06-28 09:25:05.192] INFO  29304 [                main] o.s.b.w.e.tomcat.TomcatWebServer     ::   Tomcat started on port(s): 8080 (http) with context path ''
+[2024-06-28 09:25:05.204] INFO  29304 [                main] hello.login.ItemServiceApplication   ::   Started ItemServiceApplication in 2.488 seconds (JVM running for 3.697)
+[2024-06-28 09:25:16.737] INFO  29304 [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]   ::   Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-06-28 09:25:16.738] INFO  29304 [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet    ::   Initializing Servlet 'dispatcherServlet'
+[2024-06-28 09:25:16.739] INFO  29304 [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet    ::   Completed initialization in 1 ms
+[2024-06-28 09:25:16.755] INFO  29304 [http-nio-8080-exec-1] h.l.web.interceptor.LogInterceptor   ::   request [501d8310-71d8-45b6-88f8-629e4685e134], [/], [hello.login.web.HomeController#homeLoginV5(Member, Model)]
+[2024-06-28 09:25:16.766] INFO  29304 [http-nio-8080-exec-1] h.l.w.a.LoginMemberArgumentResolver  ::   supportsParameter() 실행
+[2024-06-28 09:25:16.767] INFO  29304 [http-nio-8080-exec-1] h.l.w.a.LoginMemberArgumentResolver  ::   resolverArgument() 실행
+[2024-06-28 09:25:16.771] INFO  29304 [http-nio-8080-exec-1] h.l.web.interceptor.LogInterceptor   ::   postHandle modelAndView [ModelAndView [view="home"; model={}]]
+[2024-06-28 09:25:17.078] INFO  29304 [http-nio-8080-exec-1] h.l.web.interceptor.LogInterceptor   ::   response [501d8310-71d8-45b6-88f8-629e4685e134], [/]
+[2024-06-28 09:25:19.335] INFO  29304 [http-nio-8080-exec-4] h.l.web.interceptor.LogInterceptor   ::   request [5ed866f7-8fd4-47ae-a571-f82ed0980c8d], [/login], [hello.login.domain.login.LoginController#loginForm(LoginRequest)]
+[2024-06-28 09:25:19.347] INFO  29304 [http-nio-8080-exec-4] h.l.web.interceptor.LogInterceptor   ::   postHandle modelAndView [ModelAndView [view="login/loginForm"; model={loginForm=LoginRequest(loginId=null, password=null), org.springframework.validation.BindingResult.loginForm=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]]
+[2024-06-28 09:25:19.393] INFO  29304 [http-nio-8080-exec-4] h.l.web.interceptor.LogInterceptor   ::   response [5ed866f7-8fd4-47ae-a571-f82ed0980c8d], [/login]
+[2024-06-28 09:25:38.011] INFO  29304 [http-nio-8080-exec-6] h.l.web.interceptor.LogInterceptor   ::   request [d80fcbe2-1eab-491e-a336-726aaabf9024], [/login], [hello.login.domain.login.LoginController#LoginV4(LoginRequest, BindingResult, String, HttpServletRequest)]
+[2024-06-28 09:25:38.068] INFO  29304 [http-nio-8080-exec-6] h.login.domain.login.LoginController ::   login: null
+[2024-06-28 09:25:38.070] INFO  29304 [http-nio-8080-exec-6] h.l.web.interceptor.LogInterceptor   ::   postHandle modelAndView [ModelAndView [view="login/loginForm"; model={loginForm=LoginRequest(loginId=das, password=dasd), org.springframework.validation.BindingResult.loginForm=org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Error in object 'loginForm': codes [loginFail.loginForm,loginFail]; arguments []; default message [아이디 또는 비밀번호가 맞지 않습니다.]}]]
+[2024-06-28 09:25:38.082] INFO  29304 [http-nio-8080-exec-6] h.l.web.interceptor.LogInterceptor   ::   response [d80fcbe2-1eab-491e-a336-726aaabf9024], [/login]
+[2024-06-28 09:29:59.563] INFO  29304 [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor       ::   Shutting down ExecutorService 'applicationTaskExecutor'

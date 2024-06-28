@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 설정 파일
+src/main/resources/application.properties
+
+### 로그 파일
+logs
+src/main/resources/logback-spring.xml
